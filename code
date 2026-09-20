@@ -1,0 +1,104 @@
+import React, { useState } from 'react';
+
+import {
+  View,
+  Text,
+  StyleSheet,
+  Pressable,
+} from 'react-native';
+
+export default function App() {
+
+  const [message, setMessage] = useState(
+    'Kamu bisa, lebih dari yang kamu kira! ❤️'
+  );
+
+  return (
+    <View style={styles.container}>
+
+      <Text style={styles.logo}>
+        ⚛
+      </Text>
+
+      <Text style={styles.title}>
+        Halo, Kelompok 3!
+      </Text>
+
+      <Text style={styles.description}>
+        Ini aplikasi mobile pertama saya
+        menggunakan React Native 🚀
+      </Text>
+
+      <Pressable
+        style={styles.button}
+        onPress={() =>
+          setMessage(
+            'Selamat! Kamu berhasil membuat aplikasi mobile! 🚀'
+          )
+        }
+      >
+        <Text style={styles.buttonText}>
+          Mulai Belajar
+        </Text>
+      </Pressable>
+
+      <Text style={styles.message}>
+        {message}
+      </Text>
+
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+
+  container: {
+    flex: 1,
+    backgroundColor: '#eaf4ff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 25,
+  },
+
+  logo: {
+    fontSize: 80,
+    marginBottom: 20,
+  },
+
+  title: {
+    fontSize: 26,
+    fontWeight: 'bold',
+    color: '#123b7a',
+    textAlign: 'center',
+    marginBottom: 12,
+  },
+
+  description: {
+    fontSize: 16,
+    color: '#555',
+    textAlign: 'center',
+    lineHeight: 24,
+    marginBottom: 30,
+  },
+
+  button: {
+    backgroundColor: '#1687ff',
+    paddingVertical: 14,
+    paddingHorizontal: 45,
+    borderRadius: 30,
+  },
+
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+
+  message: {
+    marginTop: 25,
+    fontSize: 14,
+    color: '#555',
+    textAlign: 'center',
+  },
+
+});
